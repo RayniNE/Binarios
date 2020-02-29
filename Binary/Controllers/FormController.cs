@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Binary.Helper;
+using Binary.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Binary.Controllers
@@ -12,9 +14,16 @@ namespace Binary.Controllers
         {
             return View();
         }
-        public IActionResult Resultado()
+        public IActionResult Resultado(Nums model)
         {
-            return View();
+            BinaryHelper bh = new BinaryHelper();
+            foreach(int n in model.Numeros)
+            {
+                model.Binarios.Add(bh.NumaBinario(n));
+            }
+            return View(model);
         }
+
+
     }
 }

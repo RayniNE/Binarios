@@ -1,7 +1,31 @@
-﻿
+﻿@model Nums
+
 @{
     ViewData["Title"] = "Resultado";
 }
 
-<h1>Resultado</h1>
+    <div class="text-center">
+        <h1>Resultado</h1>
+    </div>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Numeros ingresados</th>
+                <th scope="col">Numeros Binarios</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for(int x = 0; x < Model.Numeros.Count; x++)
+            {
+                <tr>
+                    <th scope="row">@Model.Numeros[x]</th>
+                    <th scope="row">@Model.Binarios[x]</th>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
 
