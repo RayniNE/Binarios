@@ -1,0 +1,27 @@
+﻿@model Nums
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <form asp-action="/Resultado" method="post">
+        <div class="text-center">
+            <h1>Convertidor de número a binario.</h1>
+        </div>
+
+        <h2> Inserte los numeros </h2>
+
+        @for (int i = 0; i < 10; i++)
+        {
+
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Ingrese el número en la posición @(i + 1)</span>
+                </div>
+                <input type="number" class="form-control" placeholder="Ejemplo: 10" asp-for="Numeros[i]">   
+
+            <div class="text-center">
+                <button class="btn btn-dark" type="submit"> Enviar </button>
+            </div>
+        }
+    </form>
+
+
